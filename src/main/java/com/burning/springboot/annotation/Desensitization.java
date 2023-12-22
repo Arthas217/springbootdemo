@@ -36,4 +36,6 @@ public @interface Desensitization {
      * 脱敏结束位置（不包含）支持负数，-1：字符串倒数第一个字符
      */
     int endExclude() default 0;
+
+    boolean enable() default false;
 }

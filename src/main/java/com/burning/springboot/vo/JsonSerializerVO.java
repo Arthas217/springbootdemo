@@ -23,6 +23,6 @@ public class JsonSerializerVO {
     @Desensitization(type = DesensitizationTypeEnum.PASSWORD)
     private String password;
 
-    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 0,endExclude = -1)
+    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 0,endExclude = -1,enable =true)
     private String address;
 }

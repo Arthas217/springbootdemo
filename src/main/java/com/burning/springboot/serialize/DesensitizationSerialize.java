@@ -32,14 +32,20 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
 
     private Integer endExclude;
 
+    private Boolean enable;
+
 
     @Override
     public void serialize(String str, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         switch (type) {
             // 自定义类型脱敏
             case MY_RULE:
-                endExclude = endExclude < 0 ? str.length() + endExclude : endExclude;
-                jsonGenerator.writeString(CharSequenceUtil.hide(str, startInclude, endExclude));
+                if(enable) {
+                    endExclude = endExclude < 0 ? str.length() + endExclude : endExclude;
+                    jsonGenerator.writeString(CharSequenceUtil.hide(str, startInclude, endExclude));
+                }else {
+                    jsonGenerator.writeString(str);
+                }
                 break;
             // userId脱敏
             case USER_ID:
@@ -100,7 +106,7 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
                 if (desensitization != null) {
                     // 创建定义的序列化类的实例并且返回，入参为注解定义的type,开始位置，结束位置。
                     return new DesensitizationSerialize(desensitization.type(), desensitization.startInclude(),
-                            desensitization.endExclude());
+                            desensitization.endExclude(),desensitization.enable());
                 }
             }
             return serializerProvider.findValueSerializer(beanProperty.getType(), beanProperty);
