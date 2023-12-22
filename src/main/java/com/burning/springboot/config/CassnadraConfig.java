@@ -15,11 +15,11 @@ import java.net.InetSocketAddress;
 @Configuration
 public class CassnadraConfig {
 
-    @Bean
-    public CqlSession cqlSession() {
-        return CqlSession.builder().
-                addContactPoint(new InetSocketAddress("", 9042)).
-                withLocalDatacenter("datacenter1").
-                withKeyspace("msxf").build();
-    }
+//    @Bean
+//    public CqlSession cqlSession() {
+//        return CqlSession.builder().
+//                addContactPoint(new InetSocketAddress("", 9042)).
+//                withLocalDatacenter("datacenter1").
+//                withKeyspace("msxf").build();
+//    }
 }
