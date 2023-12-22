@@ -23,12 +23,13 @@ public class JsonSerializerVO {
     @Desensitization(type = DesensitizationTypeEnum.PASSWORD)
     private String password;
 
-    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2,endExclude = -2,enable =true)
+    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2, endExclude = -2)
     private String address;
 
-    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2,endExclude = -2,enable =true)
+    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2, endExclude = -2)
     private String publicKey;
 
-    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2,endExclude = -2,enable =true)
+    @Desensitization(type = DesensitizationTypeEnum.MY_RULE, startInclude = 2, endExclude = -2)
     private String privateKey;
+
 }

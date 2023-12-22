@@ -37,5 +37,5 @@ public @interface Desensitization {
      */
     int endExclude() default 0;
 
-    boolean enable() default false;
+//    boolean enable() default false;
 }
