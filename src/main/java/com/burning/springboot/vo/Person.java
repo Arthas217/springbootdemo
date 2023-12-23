@@ -1,6 +1,7 @@
 package com.burning.springboot.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.burning.springboot.annotation.FastJsonFieldDesensitization;
 import com.burning.springboot.serialize.PhoneDesensitization;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,9 @@ public class Person {
 
     @JSONField(serializeUsing = PhoneDesensitization.class)
     String phone;
+
+    @FastJsonFieldDesensitization
+    String cardId;
 
     String email;
 
