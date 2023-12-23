@@ -18,6 +18,8 @@ import java.util.Objects;
 
 /**
  * 自定义序列化类
+ * 继承 JsonSerializer 类并实现serialize方法，可以实现对特定类型的数据进行定制化的序列化处理。
+ * 实现 ContextualSerializer接口 作用是允许序列化器根据上下文信息动态调整其行为。
  *
  * @author 会游泳的蚂蚁
  * @date 2023/12/22 10:43
@@ -32,20 +34,21 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
 
     private Integer endExclude;
 
-//    private Boolean enable;
 
-
+    /**
+     * @param str
+     * @param jsonGenerator      用于生成 JSON 数据的类。它提供了一系列方法来将 Java 对象序列化为 JSON 格式的数据流
+     * @param serializerProvider 用于提供序列化器的类。它负责管理和提供用于将 Java 对象序列化为 JSON 数据的序列化器。
+     * @throws IOException
+     */
     @Override
     public void serialize(String str, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
         switch (type) {
             // 自定义类型脱敏
             case MY_RULE:
-//                if(enable) {
-                    endExclude = endExclude < 0 ? str.length() + endExclude : endExclude;
-                    jsonGenerator.writeString(CharSequenceUtil.hide(str, startInclude, endExclude));
-//                }else {
-//                    jsonGenerator.writeString(str);
-//                }
+                //负数逻辑的处理
+                endExclude = endExclude < 0 ? str.length() + endExclude : endExclude;
+                jsonGenerator.writeString(CharSequenceUtil.hide(str, startInclude, endExclude));
                 break;
             // userId脱敏
             case USER_ID:
@@ -91,6 +94,14 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
         }
     }
 
+    /**
+     * 序列化器可以根据上下文信息动态地调整其行为，例如根据字段的注解信息、父类的序列化器等来定制化序列化过程。这样可以更灵活地处理不同类型的数据，提高序列化的定制化程度和灵活性。
+     *
+     * @param serializerProvider
+     * @param beanProperty
+     * @return
+     * @throws JsonMappingException
+     */
     @Override
     public JsonSerializer<?> createContextual(SerializerProvider serializerProvider, BeanProperty beanProperty) throws JsonMappingException {
         if (beanProperty != null) {
@@ -107,7 +118,6 @@ public class DesensitizationSerialize extends JsonSerializer<String> implements 
                     // 创建定义的序列化类的实例并且返回，入参为注解定义的type,开始位置，结束位置。
                     return new DesensitizationSerialize(desensitization.type(), desensitization.startInclude(),
                             desensitization.endExclude());
-//                            desensitization.endExclude(),desensitization.enable());
                 }
             }
             return serializerProvider.findValueSerializer(beanProperty.getType(), beanProperty);

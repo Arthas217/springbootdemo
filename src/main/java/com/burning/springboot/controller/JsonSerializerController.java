@@ -15,7 +15,8 @@ import java.security.NoSuchAlgorithmException;
 import static com.burning.springboot.common.utils.RsaUtil.getKeyPair;
 
 /**
- * 过敏数据
+ * 参考： https://javaguide.cn/system-design/security/data-desensitization.html#hutool
+ * 过敏数据(在对于的VO中添加注解@Desensitization，通过JsonSerialize注解方式进行脱敏)
  * 遗留问题 1） 对于密钥很长的数据如何返给前端，2） 对于主键int类型的id值，如何脱敏
  *
  * @author 会游泳的蚂蚁

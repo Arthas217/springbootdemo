@@ -18,8 +18,8 @@ import java.lang.annotation.Target;
  */
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@JacksonAnnotationsInside
-@JsonSerialize(using = DesensitizationSerialize.class)
+@JacksonAnnotationsInside//被此注解标记的Desensitization注解可以被应用在Jackson库中的其他注解上，以实现更灵活的注解组合和嵌套使用。
+@JsonSerialize(using = DesensitizationSerialize.class)//指定在将 Java 对象序列化为 JSON 格式时使用的自定义序列化器。通
 public @interface Desensitization {
 
     /**
@@ -33,9 +33,9 @@ public @interface Desensitization {
     int startInclude() default 0;
 
     /**
-     * 脱敏结束位置（不包含）支持负数，-1：字符串倒数第一个字符
+     * 脱敏结束位置（不包含）
+     * 支持负数（-1：字符串倒数第一个字符)
      */
     int endExclude() default 0;
 
-//    boolean enable() default false;
 }
