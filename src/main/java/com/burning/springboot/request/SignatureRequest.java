@@ -6,8 +6,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
+ * 签名请求参数
  * @author 会游泳的蚂蚁
- * @description:
  * @date 2023/12/20 10:06
  */
 @Data

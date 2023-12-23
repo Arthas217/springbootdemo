@@ -8,8 +8,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
+ * 测试签名，测试validate参数校验，雇员实体类
  * @author 会游泳的蚂蚁
- * @description:
  * @date 2023/12/19 18:12
  */
 @Data

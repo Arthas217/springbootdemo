@@ -12,7 +12,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * 脱敏注解
+ * Spring Jackson脱敏注解
  * @author 会游泳的蚂蚁
  * @date 2023/12/22 10:40
  */

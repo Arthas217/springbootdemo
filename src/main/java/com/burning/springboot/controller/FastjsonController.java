@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 数据过敏测试
+ * https://juejin.cn/post/7067916686141161479#heading-3
  * @author 会游泳的蚂蚁
  * @date 2023/12/23 16:38
  */

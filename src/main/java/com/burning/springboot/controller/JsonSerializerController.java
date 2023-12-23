@@ -1,7 +1,7 @@
 package com.burning.springboot.controller;
 
-import com.burning.springboot.vo.JsonSerializerVO;
-import com.burning.springboot.vo.JsonSerializerVO2;
+import com.burning.springboot.vo.PushMessage;
+import com.burning.springboot.vo.PushMessage2;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,9 +26,9 @@ import static com.burning.springboot.common.utils.RsaUtil.getKeyPair;
 public class JsonSerializerController {
 
     @RequestMapping("/test")
-    public JsonSerializerVO testDesensitization(Boolean enable) throws Exception {
+    public PushMessage testDesensitization(Boolean enable) throws Exception {
         if (enable == null) {
-            return new JsonSerializerVO();
+            return new PushMessage();
         }
         KeyPair keyPair = getKeyPair();
         String privateKey = new String(Base64.encodeBase64(keyPair.getPrivate().getEncoded()));
@@ -37,7 +37,7 @@ public class JsonSerializerController {
         String shortPubKey = getShortKey(publicKey);
         // 脱敏数据
         if (enable) {
-            JsonSerializerVO serializerVO = new JsonSerializerVO();
+            PushMessage serializerVO = new PushMessage();
             serializerVO.setUserName("我是用户名");
             serializerVO.setAddress("地球中国-北京市通州区2号楼");
             serializerVO.setPhone("13782946666");
@@ -47,7 +47,7 @@ public class JsonSerializerController {
             System.out.println(serializerVO);
             return serializerVO;
         }
-        JsonSerializerVO2 serializerVO2 = new JsonSerializerVO2();
+        PushMessage2 serializerVO2 = new PushMessage2();
         serializerVO2.setUserName("我是用户名");
         serializerVO2.setAddress("地球中国-北京市通州区2号楼");
         serializerVO2.setPhone("13782946666");

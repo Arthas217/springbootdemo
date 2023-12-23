@@ -1,7 +1,7 @@
 package com.burning.springboot.common.enums;
 
 /**
- * 脱敏策略的枚举,脱敏类型。
+ * 脱敏策略枚举-脱敏类型
  * @author 会游泳的蚂蚁
  * @date 2023/12/22 10:39
  */

@@ -20,8 +20,8 @@ import java.util.stream.Collectors;
 import static com.burning.springboot.common.utils.RsaUtil.*;
 
 /**
+ * 验签切面（支持枚举类型参数）
  * @author 会游泳的蚂蚁
- * @description:
  * @date 2023/12/20 10:19
  */
 @Aspect
@@ -59,8 +59,8 @@ public class SignatureAspect {
 
         boolean verifySHA256WithRSA = signVerifySHA256WithRSA(data, publicKey, signature);
         if (!verifySHA256WithRSA) {
-//            return Response.buildFailed(ResponseStatus.SIGNATURE_FAIL);
-            return Response.buildFailed(ResponseStatus.SIGNATURE_FAIL, signature, sign1);
+            // 方便调试
+            return Response.buildFailed(ResponseStatus.SIGNATURE_FAIL, "验签失败，参数传的验签串：" + signature, "实际应该的验签串：" + sign1);
         }
         return joinPoint.proceed();
     }

@@ -6,8 +6,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 统一web请求响应类
  * @author 会游泳的蚂蚁
- * @description:
  * @date 2023/12/20 12:11
  */
 @Data

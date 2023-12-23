@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import java.net.InetSocketAddress;
 
 /**
+ * Cassandra实例化配置类
  * @author 会游泳的蚂蚁
  * @date 2023/12/20 20:22
  */
