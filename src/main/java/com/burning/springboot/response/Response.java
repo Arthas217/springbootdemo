@@ -16,7 +16,7 @@ public class Response<T> implements Serializable {
     private String message;
     private T data;
 
-    public Response(){
+    public Response() {
 
     }
 
@@ -26,20 +26,40 @@ public class Response<T> implements Serializable {
         this.data = data;
     }
 
-    public static <E> Response<E> buildSuccess(){
-        return build(ResponseStatus.SUCCESS.getCode(),ResponseStatus.SUCCESS.getDesc(), null);
+    public static <E> Response<E> buildSuccess() {
+        return build(ResponseStatus.SUCCESS.getCode(), ResponseStatus.SUCCESS.getDesc(), null);
     }
 
-    public static <E> Response<E> buildFailed(ResponseStatus responseStatus){
-        return build(responseStatus.getCode(),responseStatus.getDesc(),null);
+    public static <E> Response<E> buildSuccess(ResponseStatus responseStatus) {
+        return build(responseStatus.getCode(), responseStatus.getDesc(), null);
     }
 
+    public static <E> Response<E> buildSuccess(ResponseStatus responseStatus, E data) {
+        return build(responseStatus.getCode(), responseStatus.getDesc(), data);
+    }
 
-    public static <E> Response<E> buildFailed(ResponseStatus responseStatus,String message,E data){
+    public static <E> Response<E> buildSuccess(ResponseStatus responseStatus, String message, E data) {
         return build(responseStatus.getCode(), message, data);
     }
 
-    public static <E> Response<E> build(int code ,String message,E data){
+
+    public static <E> Response<E> buildFailed() {
+        return build(ResponseStatus.Fail.getCode(), ResponseStatus.Fail.getDesc(), null);
+    }
+
+    public static <E> Response<E> buildFailed(ResponseStatus responseStatus) {
+        return build(responseStatus.getCode(), responseStatus.getDesc(), null);
+    }
+
+    public static <E> Response<E> buildFailed(ResponseStatus responseStatus, E data) {
+        return build(responseStatus.getCode(), responseStatus.getDesc(), data);
+    }
+
+    public static <E> Response<E> buildFailed(ResponseStatus responseStatus, String message, E data) {
+        return build(responseStatus.getCode(), message, data);
+    }
+
+    public static <E> Response<E> build(int code, String message, E data) {
         Response<E> response = new Response<>();
         response.code = code;
         response.message = message;

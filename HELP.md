@@ -1,5 +1,8 @@
 1、脱敏数据
+https://javaguide.cn/system-design/security/data-desensitization.html#hutool
+https://developer.jdcloud.com/article/3165
 2、签名
+https://www.cnblogs.com/zhangww/p/10846216.html
 3、请求响应基类
 4、Cassandra数据库
 5、@Validated使用

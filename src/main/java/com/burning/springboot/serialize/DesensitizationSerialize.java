@@ -17,7 +17,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * 自定义序列化类
+ * 自定义序列化类(基于自定义注解+spring提供的jackson方式)
  * 继承 JsonSerializer 类并实现serialize方法，可以实现对特定类型的数据进行定制化的序列化处理。
  * 实现 ContextualSerializer接口 作用是允许序列化器根据上下文信息动态调整其行为。
  *
