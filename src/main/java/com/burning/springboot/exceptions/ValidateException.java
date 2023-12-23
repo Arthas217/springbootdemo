@@ -1,4 +1,4 @@
-package com.burning.springboot.controller;
+package com.burning.springboot.exceptions;
 
 import com.burning.springboot.common.enums.ResponseStatus;
 import com.burning.springboot.response.Response;
