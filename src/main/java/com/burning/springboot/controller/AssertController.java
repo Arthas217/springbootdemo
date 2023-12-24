@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 断言检验方式
+ * https://mp.weixin.qq.com/s/PGGOR263SZV9ILCDMpT9OA
  * @author 会游泳的蚂蚁
  * @date 2023/12/24 21:30
  */

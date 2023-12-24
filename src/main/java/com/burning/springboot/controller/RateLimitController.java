@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 令牌桶限流
+ * https://mp.weixin.qq.com/s/A5VYjstIDeVvizNK2HkrTQ
  * @author 会游泳的蚂蚁
  * @date 2023/12/24 09:27
  */
