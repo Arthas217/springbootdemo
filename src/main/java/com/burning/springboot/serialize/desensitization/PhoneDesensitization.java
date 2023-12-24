@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 public class PhoneDesensitization implements ObjectSerializer {
     @Override
     public void write(JSONSerializer serializer, Object object, Object fieldName, Type fieldType, int features) throws IOException {
-        //这里只是做了一个简单
+        // 这里只是做了一个简单
         if (fieldType != String.class) {
             serializer.write(object);
             return;
