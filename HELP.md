@@ -7,3 +7,13 @@ https://www.cnblogs.com/zhangww/p/10846216.html
 4、Cassandra数据库
 5、@Validated使用
 6、Mybatis插件，逆向生成
+
+
+
+
+
+
+
+
+springboot test知识点
+https://www.cnblogs.com/myitnews/p/12330297.html
