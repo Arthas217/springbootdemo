@@ -1,4 +1,4 @@
-package com.burning.springboot.serialize;
+package com.burning.springboot.serialize.desensitization;
 
 import com.alibaba.fastjson.serializer.ValueFilter;
 import com.burning.springboot.annotation.FastJsonFieldDesensitization;

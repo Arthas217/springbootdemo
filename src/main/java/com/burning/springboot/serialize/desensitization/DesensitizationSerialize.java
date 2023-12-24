@@ -1,4 +1,4 @@
-package com.burning.springboot.serialize;
+package com.burning.springboot.serialize.desensitization;
 
 import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.DesensitizedUtil;

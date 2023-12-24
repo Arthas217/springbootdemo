@@ -2,7 +2,7 @@ package com.burning.springboot.annotation;
 
 
 import com.burning.springboot.common.enums.DesensitizationTypeEnum;
-import com.burning.springboot.serialize.DesensitizationSerialize;
+import com.burning.springboot.serialize.desensitization.DesensitizationSerialize;
 import com.fasterxml.jackson.annotation.JacksonAnnotationsInside;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 

@@ -3,7 +3,7 @@ package com.burning.springboot.controller;
 import com.alibaba.fastjson.JSON;
 import com.burning.springboot.common.enums.ResponseStatus;
 import com.burning.springboot.response.Response;
-import com.burning.springboot.serialize.FastJsonSerializeFilter;
+import com.burning.springboot.serialize.desensitization.FastJsonSerializeFilter;
 import com.burning.springboot.vo.Person;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

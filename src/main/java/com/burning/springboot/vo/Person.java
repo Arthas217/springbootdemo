@@ -2,7 +2,7 @@ package com.burning.springboot.vo;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.burning.springboot.annotation.FastJsonFieldDesensitization;
-import com.burning.springboot.serialize.PhoneDesensitization;
+import com.burning.springboot.serialize.desensitization.PhoneDesensitization;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
