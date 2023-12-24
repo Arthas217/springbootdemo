@@ -14,7 +14,7 @@ import java.net.InetSocketAddress;
  */
 @Slf4j
 @Configuration
-public class CassnadraConfig {
+public class CassandraConfig {
 
 //    @Bean
 //    public CqlSession cqlSession() {
