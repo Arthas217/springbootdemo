@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
         log.info("business error : {}", e.getMessage(), e);
         //目前理解此接口返回失败
         if (e.getCode() == -1) {
-            return Response.buildFailed(ResponseStatus.Fail, null);
+            return Response.buildFailed(ResponseStatus.FAIL, null);
         }
         //返回业务定义异常
         return Response.buildFailed(e.getCode(), e.getMessage());

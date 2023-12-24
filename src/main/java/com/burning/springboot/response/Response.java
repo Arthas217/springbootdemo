@@ -44,7 +44,7 @@ public class Response<T> implements Serializable {
 
 
     public static <T> Response<T> buildFailed() {
-        return build(ResponseStatus.Fail.getCode(), ResponseStatus.Fail.getDesc(), null);
+        return build(ResponseStatus.FAIL.getCode(), ResponseStatus.FAIL.getDesc(), null);
     }
 
     public static <T> Response<T> buildFailed(ResponseStatus responseStatus) {
