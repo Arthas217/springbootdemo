@@ -7,6 +7,7 @@ import com.burning.springboot.context.ProtocolTypeContext;
 import static com.burning.springboot.common.enums.ProtocolTypeEnum.*;
 
 /**
+ * 枚举方式引发的思考
  * https://mp.weixin.qq.com/s/Vt_mdLicWwkZ8phD1rH6UQ
  *
  * @author 会游泳的蚂蚁
