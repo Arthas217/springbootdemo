@@ -4,15 +4,18 @@ import lombok.Data;
 
 /**
  * @author 会游泳的蚂蚁
- * @description:  响应状态码
+ * @description: 响应状态码
  * @date 2023/12/20 12:13
  */
 public enum ResponseStatus {
 
-    SUCCESS(0,"成功"),
-    Fail(-1,"失败"),
-    PARAM_INVALID(1,"参数不合法"),
-    SIGNATURE_FAIL(2,"验签失败");
+    SUCCESS(0, "成功"),
+    Fail(-1, "失败"),
+    PARAM_INVALID(1, "参数不合法"),
+    SIGNATURE_FAIL(2, "验签失败"),
+    LIMIT_RATE(3, "接口限流"),
+    NULL_POINT(4, "空指针异常"),
+    INTERNAL_SERVER_ERROR(5, "未知异常");
     private Integer code;
     private String desc;
 
