@@ -17,26 +17,27 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2023/12/19 18:37
  */
 @ControllerAdvice
+@Deprecated
 public class ValidateException {
 
-    @ExceptionHandler(BindException.class)
-    @ResponseBody
-    public Response validExceptionHandle(BindException bindException) {
-        return Response.buildFailed(ResponseStatus.PARAM_INVALID, bindException.getAllErrors().get(0).getDefaultMessage(), null);
-    }
-
-    @ExceptionHandler(NullPointerException.class)
-    @ResponseBody
-    public Response nullPointerExceptionHandle(NullPointerException nullPointerException) {
-        return Response.buildFailed(ResponseStatus.NULL_POINT, nullPointerException.getMessage(), null);
-    }
-
-
-    @ExceptionHandler(value =Exception.class)
-    @ResponseBody
-    public Response exceptionHandler(HttpServletRequest req, Exception e){
-        return Response.buildFailed(ResponseStatus.INTERNAL_SERVER_ERROR,e.getMessage(),null);
-    }
+//    @ExceptionHandler(BindException.class)
+//    @ResponseBody
+//    public Response validExceptionHandle(BindException bindException) {
+//        return Response.buildFailed(ResponseStatus.PARAM_INVALID, bindException.getAllErrors().get(0).getDefaultMessage(), null);
+//    }
+//
+//    @ExceptionHandler(NullPointerException.class)
+//    @ResponseBody
+//    public Response nullPointerExceptionHandle(NullPointerException nullPointerException) {
+//        return Response.buildFailed(ResponseStatus.NULL_POINT, nullPointerException.getMessage(), null);
+//    }
+//
+//
+//    @ExceptionHandler(value =Exception.class)
+//    @ResponseBody
+//    public Response exceptionHandler(HttpServletRequest req, Exception e){
+//        return Response.buildFailed(ResponseStatus.INTERNAL_SERVER_ERROR,e.getMessage(),null);
+//    }
 
 
 
@@ -48,10 +49,10 @@ public class ValidateException {
      * @param runtimeException
      * @return
      */
-    @ExceptionHandler(RuntimeException.class)
-    @ResponseBody
-    public Response validExceptionHandle(RuntimeException runtimeException) {
-        return Response.buildFailed(ResponseStatus.LIMIT_RATE, runtimeException.getMessage(), null);
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    @ResponseBody
+//    public Response validExceptionHandle(RuntimeException runtimeException) {
+//        return Response.buildFailed(ResponseStatus.LIMIT_RATE, runtimeException.getMessage(), null);
+//    }
 
 }

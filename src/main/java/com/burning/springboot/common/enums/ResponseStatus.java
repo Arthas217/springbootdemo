@@ -15,7 +15,7 @@ public enum ResponseStatus {
     SIGNATURE_FAIL(2, "验签失败"),
     LIMIT_RATE(3, "接口限流"),
     NULL_POINT(4, "空指针异常"),
-    INTERNAL_SERVER_ERROR(5, "未知异常");
+    INTERNAL_SERVER_ERROR(5, "服务器内部未知异常");
     private Integer code;
     private String desc;
 

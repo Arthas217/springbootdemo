@@ -1,6 +1,8 @@
 package com.burning.springboot.aspect;
 
 import com.burning.springboot.annotation.Limit;
+import com.burning.springboot.common.enums.ResponseStatus;
+import com.burning.springboot.exceptions.BusinessException;
 import com.google.common.collect.Maps;
 import com.google.common.util.concurrent.RateLimiter;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -44,7 +46,7 @@ public class LimitAspect {
             acquire = rateLimiter.tryAcquire(limit.timeout(), limit.timeUnit());
             //拿不到令牌，直接返回异常信息
             if (!acquire) {
-                throw new RuntimeException(limit.msg());
+                throw new BusinessException(ResponseStatus.LIMIT_RATE.getCode(), limit.msg());
             }
         }
         return joinPoint.proceed();
